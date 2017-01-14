@@ -1,0 +1,91 @@
+@import "../mixin/mixin.less";
+@import "../var/var.less";
+
+
+//子菜单默认背景颜色
+.blue {
+  background: @CircleMenuItem4Color;
+}
+.yellow {
+  background: @CircleMenuItem3Color;
+}
+.green {
+  background: @CircleMenuItem2Color;
+}
+
+.purple {
+  background: @CircleMenuItem1Color;
+}
+
+.pink {
+  background: @CircleMenuBtnColor;
+}
+//遮罩样式
+.oy-mask-white {
+  .mask();
+  background: rgba(255, 255, 255, 0.8);
+  &_transparent{
+    .mask();
+  }  
+}
+
+.oy-mask-black {
+  .mask();
+  background: rgba(0, 0, 0, 0.6);
+  &_transparent{
+    .mask();
+  }  
+}
+
+// 菜单和子菜单的基础样式
+.oy-menu-group{
+  z-index: 1001;
+}
+
+.oy-menu-btn{
+  .meun-base();
+  &:active,
+  &:focus{
+    outline: none;
+  }
+}
+.oy-menu-btn-Circle {
+  .circle();
+}
+
+.oy-menu-item{
+  .meun-base();
+  .circle();
+}
+
+// 默认开关按钮样式
+.icon-bars{
+  background: #fff;
+  height: 1px;
+  width: 22px;
+  margin: auto;
+  display: block;
+  position: relative;
+  transition: 0.2s 0.2s;
+  &:after{
+    content: '';
+    position: absolute;
+    height: 22px;
+    width: 1px;
+    background: #fff;
+    top: -10px;
+  }
+  .oy-menu-group.open &{
+    transform: rotate(45deg);
+  }
+}
+
+// 菜单和子菜单定位
+.oy-menu-group {
+  position: relative;
+  float: right;
+  transition: 0.2s;
+}
+.oy-menu-group .btn-toggle {
+  z-index: 15; 
+}

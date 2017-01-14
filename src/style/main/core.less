@@ -1,0 +1,173 @@
+@import "../mixin/mixin.less";
+@import "../var/var.less";
+
+.oy-menu-group .btn-list .oy-menu-item{
+  @{top} &{
+    .CircleItem();
+  }
+  @{bottom} &{
+    .CircleItem();
+  }
+  @{left} &{
+    .CircleItem();
+  }
+  @{right} &{
+    .CircleItem();
+  }
+  @{middle} &{
+    .CircleItem();
+  } 
+  .middle-around &{
+    .CircleItem();
+  } 
+  
+}
+.oy-menu-group.open .btn-list .oy-menu-item{
+  @{top} &{
+    opacity: 1;
+  }
+  @{bottom} &{
+    opacity: 1;
+  }
+  @{left} &{
+    opacity: 1;
+  }
+  @{right} &{
+    opacity: 1;
+  }
+  @{middle} &{
+    opacity: 1;
+  } 
+  .middle-around &{
+    opacity: 1;
+  } 
+  
+}
+
+// tope 样式
+.top-open(@n, @i: 1) when (@i =< @n) {
+  .top .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    top: (@i * @MenuPrepSpace);
+    transition: 0.2s 0.1s;
+  }
+  .top-open(@n, (@i + 1));
+}
+.top(@n, @i: 1) when (@i =< @n) {
+  .top .oy-menu-group .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    transition: 0.2s 0.1s;
+  }
+  .top(@n, (@i + 1));
+}
+
+.top(4);
+.top-open(4);
+
+// bottom的样式
+.bottom-open(@n, @i: 1) when (@i =< @n) {
+  .bottom .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    top: (@i * @MenuSpace);
+    transition: 0.2s 0.1s;
+  }
+  .bottom-open(@n, (@i + 1));
+}
+.bottom(@n, @i: 1) when (@i =< @n) {
+  .bottom .oy-menu-group .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    transition: 0.2s 0.1s;
+  }
+  .bottom(@n, (@i + 1));
+}
+.bottom(4);
+.bottom-open(4);
+
+//left的样式
+.left-open(@n, @i: 1) when (@i =< @n) {
+  .left .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    left: (@i * @MenuSpace);
+    transition: 0.2s 0.1s;
+  }
+  .left-open(@n, (@i + 1));
+}
+.left(@n, @i: 1) when (@i =< @n) {
+  .left .oy-menu-group .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    transition: 0.2s 0.1s;
+  }
+  .left(@n, (@i + 1));
+}
+.left(4);
+.left-open(4);
+
+//right的样式
+.right-open(@n, @i: 1) when (@i =< @n) {
+  .right .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    left: (@i * @MenuPrepSpace);
+    transition: 0.2s 0.1s;
+  }
+  .right-open(@n, (@i + 1));
+}
+.right(@n, @i: 1) when (@i =< @n) {
+  .right .oy-menu-group .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    transition: 0.2s 0.1s;
+  }
+  .right(@n, (@i + 1));
+}
+.right-open(4);
+.right(4);
+
+//middle的样式
+.middle(@n, @i: 1) when (@i =< @n) {
+  .middle .oy-menu-group .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    transition: 0.2s 0.1s;
+  }
+  .middle(@n, (@i + 1));
+}
+.middle(4);
+.middle .oy-menu-group.open .btn-list{
+  & .oy-menu-item.oy-menu-item_1{
+    left: -55px;
+    transition: 0.2s 0.1s;
+  }
+  & .oy-menu-item.oy-menu-item_2{
+    left: 55px;
+    transition: 0.2s 0.1s;
+  }
+  & .oy-menu-item.oy-menu-item_3{
+    left: -110px;
+    transition: 0.2s 0.2s;
+  }
+  & .oy-menu-item.oy-menu-item_4{
+    left: 110px;
+    transition: 0.2s 0.2s;
+  }
+}
+
+
+//middle-around的样式
+.middle-around(@n, @i: 1) when (@i =< @n) {
+  .middle-around .oy-menu-group .btn-list .oy-menu-item.oy-menu-item_@{i} {
+    transition: 0.2s 0.1s;
+  }
+  .middle-around(@n, (@i + 1));
+}
+.middle-around(4);
+.middle-around .oy-menu-group.open .btn-list{
+  & .oy-menu-item.oy-menu-item_1{
+    left: -75px;
+    top: 0px;
+    transition: 0.2s 0.1s;
+  }
+  & .oy-menu-item.oy-menu-item_2{
+    left: 75px;
+    top: 0px;
+    transition: 0.2s 0.1s;
+  }
+  & .oy-menu-item.oy-menu-item_3{
+    left: 40px;
+    top: -65px;
+    transition: 0.2s 0.2s;
+  }
+  & .oy-menu-item.oy-menu-item_4{
+    left: -40px;
+    top: -65px;
+    transition: 0.2s 0.2s;
+  }
+}

@@ -92,7 +92,7 @@
 ```html
   <cirecle-menu type="top">
     <button type="button" slot="item_btn"></button>
-    <i slot="item_1" class="fa fa-twitter fa-lg"></i>
+    <router-link :to="..." slot="item_1">
     <span slot="item_2"></a>
     <div slot="item_3"></a>
     <img  slot="item_4" src="img" />
@@ -103,10 +103,10 @@
 ```html
   <cirecle-menu type="middle-around">
     <button type="button" slot="item_btn" @click="dosomething" ></button>
-    <a slot="item_1" herf="#" ></a>
-    <a slot="item_2" herf="#" ></a>
-    <a slot="item_3"></a>
-    <a slot="item_4"></a>
+    <a slot="item_1" herf="#" @click=""></a>
+    <a slot="item_2" herf="#" @click=""></a>
+    <a slot="item_3" herf="#" @click=""></a>
+    <a slot="item_4" herf="#" @click=""></a>
   </cirecle-menu>
 ```
 

@@ -104,9 +104,9 @@
   <cirecle-menu type="middle-around">
     <button type="button" slot="item_btn" @click="dosomething" ></button>
     <a slot="item_1" herf="#" @click=""></a>
-    <a slot="item_2" herf="#" @click=""></a>
-    <a slot="item_3" herf="#" @click=""></a>
-    <a slot="item_4" herf="#" @click=""></a>
+    <v-touch tag="a" v-on:tap="onTap" slot="item_2"></v-touch>
+    <v-touch tag="a" v-on:tap="onTap" slot="item_3"></v-touch>
+    <a slot="item_4" herf="#" v-on:handler="handler"></a>
   </cirecle-menu>
 ```
 
@@ -136,7 +136,7 @@
 # 安装和使用
 
 ```javascript
-npm i vue-circle-menu
+npm install vue-circle-menu
 ```
 
 - 若作为全局组件使用
@@ -155,7 +155,10 @@ Vue.component('CircleMenu', CircleMenu)
 import CircleMenu from 'vue-circle-menu'
 export default {
   components: {
-    Fmenu
+    CircleMenu
   }
 }
 ```
+# bug和建议
+
+如果在使用中遇到问题或者建议，欢迎提`issues`

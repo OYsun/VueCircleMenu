@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/OYsun/VueCircleMenu"
   },
   "babel": {
     "presets": [
@@ -29,7 +29,7 @@
     "ui"
   ],
   "bugs": {
-    "url": ""
+    "url": "https://github.com/OYsun/VueCircleMenu/issues"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -41,7 +41,6 @@
     "css-loader": "^0.23.1",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
-    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "style-loader": "^0.13.0",
     "vue": "2.1.8",

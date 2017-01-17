@@ -8,7 +8,7 @@
 
 | 参数    | 类型    | 说明   |
 | ------------- |-------------| -----|
-| type | String |必填项,指明菜单的类型,有6种：top,botoom,left,right,middle,middle-around |
+| type | String |必填项,指明菜单的类型,有6种：top,bottom,left,right,middle,middle-around |
 | circle | boolean | 菜单按钮是否为圆角，默认为方形按钮 |
 | mask | String | 遮罩层，有两种："white"和"black" |
 | animate | String | 子菜单动画,可以引入外部css动画库，比如Animate.css |
@@ -30,7 +30,7 @@
 ## Props
 
 ### type
-`type`参数是必填项，指明菜单的类型，一共有一下六种：top,botoom,left,right,middle,middle-around
+`type`参数是必填项，指明菜单的类型，一共有一下六种：top,bottom,left,right,middle,middle-around
 
 <img src="./src/images/top.gif" width="250">
 <img src="./src/images/bottom.gif" width="250">
@@ -162,3 +162,7 @@ export default {
 # bug和建议
 
 如果在使用中遇到问题或者建议，欢迎提`issues`
+
+# LICENSE
+
+MIT

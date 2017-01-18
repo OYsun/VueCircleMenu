@@ -67,13 +67,13 @@
 如果要配置颜色，`colors`传入数组，<b>另外，很重要的一点,数组的值必须是颜色代码，而不是css类.</b>例如:
 
 ```html
-  <cirecle-menu type="bottom" colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
+  <circle-menu type="bottom" colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
     <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
     <a slot="item_3" class="fa fa-weibo fa-lg" herf="#" ></a>
     <a slot="item_4" class="fa fa-github fa-lg" herf="#" ></a>
-  </cirecle-menu>
+  </circle-menu>
 ```
 注意颜色代码必须一一对应，第一个颜色代码指代按钮，第二个颜色为第一个菜单，依次类推，共五个颜色代码，填多，填少或者填入的不是颜色代码都是无效的
 
@@ -90,47 +90,47 @@
 
 - 通过`solt`，可以填写任何内容，并且自定义样式
 ```html
-  <cirecle-menu type="top">
+  <circle-menu type="top">
     <button type="button" slot="item_btn"></button>
     <router-link :to="..." slot="item_1">
     <span slot="item_2"></a>
     <div slot="item_3"></a>
     <img  slot="item_4" src="img" />
-  </cirecle-menu>
+  </circle-menu>
 ```
 - 通过`slot`,给菜单绑定事件
 
 ```html
-  <cirecle-menu type="middle-around">
+  <circle-menu type="middle-around">
     <button type="button" slot="item_btn" @click="dosomething" ></button>
     <a slot="item_1" herf="#" @click=""></a>
     <v-touch tag="a" v-on:tap="onTap" slot="item_2"></v-touch>
     <v-touch tag="a" v-on:tap="onTap" slot="item_3"></v-touch>
     <a slot="item_4" herf="#" v-on:handler="handler"></a>
-  </cirecle-menu>
+  </circle-menu>
 ```
 
 
 ## 简单的例子
 ```html
 <!--"middle"类型, 动画引入animate.css库，白色遮罩，圆形自定义开关按钮，默认菜单颜色配置-->
-  <cirecle-menu type="middle" animate="animated jello" mask='white' circle>
+  <circle-menu type="middle" animate="animated jello" mask='white' circle>
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
     <a slot="item_3" class="fa fa-weibo fa-lg"></a>
     <a slot="item_4" class="fa fa-github fa-lg"></a>
-  </cirecle-menu>
+  </circle-menu>
 ```
 
 ```html
 <!--"top"类型,默认动画,灰色遮罩，方形默认开关按钮，自定义菜单颜色配置-->
-  <cirecle-menu type="top" mask='black' btn colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
+  <circle-menu type="top" mask='black' btn colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
     <a slot="item_3" class="fa fa-weibo fa-lg"></a>
     <a slot="item_4" class="fa fa-github fa-lg"></a>
-  </cirecle-menu>
+  </circle-menu>
 ```
 
 # 安装和使用

@@ -20,7 +20,7 @@
 | ------------- |-------------| -----|
 | type | String |Necessary,Specifies the type of menu,There are six types of：top,bottom,left,right,middle,middle-around |
 | circle | boolean | Whether the menu button for rounded corners, the default for the square button |
-| mask | String | There are two kinds of mask layer："white"和"black" |
+| mask | String | There are two kinds of mask layer："white" and "black" |
 | animate | String | Sub menu animation,You can import an external css animation library, such as "animate.css"|
 | btn | boolean | Switch button, fill in this property, there is the default switch button, do not fill is not the default, you need to define the switch button in the slot |
 | colors | Array | The background color of the buttons and menus |

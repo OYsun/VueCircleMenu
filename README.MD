@@ -67,7 +67,7 @@
 如果要配置颜色，`colors`传入数组，<b>另外，很重要的一点,数组的值必须是颜色代码，而不是css类.</b>例如:
 
 ```html
-  <circle-menu type="bottom" colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
+  <circle-menu type="bottom" colors="[ '#563761', '#A7425C', '#FFE26F', '#F3825F', '#F19584', ]">
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
     <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>

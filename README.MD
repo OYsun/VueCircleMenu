@@ -2,35 +2,45 @@
 
 <img src="./src/images/index.gif">
 
+
+-------------------------------------------------------------------------------------------------------
+
+## 查看中文文档，请移步至 [这里](https://github.com/OYsun/VueCircleMenu/blob/master/README-ZH.MD)
+
+# demo
+### For a better demonstration, please use the phone scan the following two-dimensional code view demo
+
+<img src="./src/images/demo.png">
+
 # API
 
 ## Props
 
-| 参数    | 类型    | 说明   |
+| Option    | type    | Description   |
 | ------------- |-------------| -----|
-| type | String |必填项,指明菜单的类型,有6种：top,bottom,left,right,middle,middle-around |
-| circle | boolean | 菜单按钮是否为圆角，默认为方形按钮 |
-| mask | String | 遮罩层，有两种："white"和"black" |
-| animate | String | 子菜单动画,可以引入外部css动画库，比如Animate.css |
-| btn | boolean | 开关按钮,填这属性，则有默认开关按钮，不填则没有默认,需要在slot中自行定义开关按钮 |
-| colors | Array | 按钮和菜单的背景颜色 |
+| type | String |Necessary,Specifies the type of menu,There are six types of：top,bottom,left,right,middle,middle-around |
+| circle | boolean | Whether the menu button for rounded corners, the default for the square button |
+| mask | String | There are two kinds of mask layer："white"和"black" |
+| animate | String | Sub menu animation,You can import an external css animation library, such as "animate.css"|
+| btn | boolean | Switch button, fill in this property, there is the default switch button, do not fill is not the default, you need to define the switch button in the slot |
+| colors | Array | The background color of the buttons and menus |
 
 ## Slot
 
-| name    | 说明   |
+| SlotName    | Description   |
 | -------------| -----|
-| item_btn  | 自定义开关按钮 |
-| item_1 | 第一个菜单的内容 |
-| item_2 | 第二个菜单的内容 |
-| item_3 | 第三个菜单的内容 |
-| item_4 | 第四个菜单的内容 |
+| item_btn  | Customize the switch button |
+| item_1 | The contents of the first menu |
+| item_2 | The content of the second menu |
+| item_3 | The content of the third menu |
+| item_4 | The content of the fourth menu |
 
-# 详细说明
+# Detailed instructions
 
 ## Props
 
 ### type
-`type`参数是必填项，指明菜单的类型，一共有一下六种：top,bottom,left,right,middle,middle-around
+The `type` parameter is required, indicating the type of the menu, a total of about six：top,bottom,left,right,middle,middle-around
 
 <img src="./src/images/top.gif" width="250">
 <img src="./src/images/bottom.gif" width="250">
@@ -40,19 +50,19 @@
 <img src="./src/images/middle-around.gif" width="250">
 
 ## circle
-`circle`是让菜单按钮为圆角，默认是方形按钮：
+Fill in `circle` to make the menu button rounded, the default is the square button：
 
 <img src="./src/images/cirecle.gif" width="300">
 <img src="./src/images/ani04.gif" width="300">
 
 ## mask
-`mask`是开关按钮在切换的时候产生的遮罩，分为两种："white"和"black".(注意：不填或填错类型都视为不需要遮罩)
+Fill in ` mask ` produces mask, divided into two kinds: "white" and "black".(Note: do not fill out or fill in the wrong type all think don't need a `mask`)
 
 <img src="./src/images/mask.gif" width="300">
 <img src="./src/images/middle-around.gif" width="300">
 
 ## animate
-`animate`是给菜单添加动画，只要添加动画css类即可，可以引入第三方css动画库，比如animate.css
+`Animate` is to add animation to the menu, as long as you can add animation css class, you can also introduce css animation library, such as `animate.css`
 
 <img src="./src/images/ani.gif" width="300">
 <img src="./src/images/ani02.gif" width="300">
@@ -60,11 +70,11 @@
 <img src="./src/images/ani04.gif" width="300">
 
 ## colors
-`colors`是指定按钮和菜单的背景颜色，不使用该属性，则会使用默认的颜色配置，该组件默认颜色配置为：
+`Colors` specifies the background color of the button and menu, and does not use this property, the default color configuration is used, and the default color of the component is：
 
   <img src="./src/images/colors.PNG" width="300">
 
-如果要配置颜色，`colors`传入数组，<b>另外，很重要的一点,数组的值必须是颜色代码，而不是css类.</b>例如:
+If you want to configure the color, `colors ` into an array，<b>In addition, it is important that an array of values must be color code, rather than the CSS class.</b>
 
 ```html
 
@@ -76,20 +86,22 @@
     <a slot="item_4" class="fa fa-github fa-lg" herf="#" ></a>
   </circle-menu>
 ```
-注意颜色代码必须一一对应，第一个颜色代码指代按钮，第二个颜色为第一个菜单，依次类推，共五个颜色代码，填多，填少或者填入的不是颜色代码都是无效的
+Note color code must be one-to-one correspondence, the first color code to refer to the button, the second color for the first menu and so on, a total of five color code, fill more, fill less or not fill in the color code is invalid
 
 ## Slot
 
 ### item_btn
-该命名`slot`是指自定义开关按钮，当你需要自定义开关按钮，请不要填写`btn`属性，使用该`slot`,这样就可以禁用默认的开关按钮，使用自定义的按钮。（自定义开关按钮有个好处，就是可以给开关按钮绑定事件，做进一步的操作）
+The name `slot` refers to the custom switch button, and when you need to customize the switch button, do not fill in the` btn` property, use the `slot`, so you can disable the default switch button and use the custom button（Custom switch button has the advantage that you can bind events to the switch button to do further operations）
 
 ### item_1,item_2,item_3,item_4
-该类`slot`分别指代四个菜单按钮
 
-### 思想：
-这五个`slot`，其实就说明该组件其实就一个包裹内容的控件， 里面的内容都在`slot`设置
+These ` slot ` one-to-one correspondence refer to the four menu button
 
-- 通过`solt`，可以填写任何内容，并且自定义样式
+### principle：
+
+According to these five `slot`,Actually means that the component is actually a parcel content box ,The contents of the box are set in `slot`
+
+- Through `slot`, you can fill in any content, and custom style
 ```html
   <circle-menu type="top">
     <button type="button" slot="item_btn"></button>
@@ -99,7 +111,7 @@
     <img  slot="item_4" src="img" />
   </circle-menu>
 ```
-- 通过`slot`,给菜单绑定事件
+- Through ` slot `, to bind any event for menu
 
 ```html
   <circle-menu type="middle-around">
@@ -112,9 +124,9 @@
 ```
 
 
-## 简单的例子
+## Simple example
 ```html
-<!--"middle"类型, 动画引入animate.css库，白色遮罩，圆形自定义开关按钮，默认菜单颜色配置-->
+<!--"Middle" type, animation introduced animate.css library, white mask, round custom switch button, default menu color configuration-->
   <circle-menu type="middle" animate="animated jello" mask='white' circle>
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
@@ -125,7 +137,7 @@
 ```
 
 ```html
-<!--"top"类型,默认动画,灰色遮罩，方形默认开关按钮，自定义菜单颜色配置-->
+<!--"Top" type, the default animation, gray mask, square the default button, the custom color configuration menu-->
   <circle-menu type="top" mask='black' btn colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
@@ -134,25 +146,25 @@
   </circle-menu>
 ```
 
-# 安装和使用
+# Installation and use
 
 ```javascript
 npm install vue-circle-menu
 ```
 
-- 若作为全局组件使用
+- If used as a global component
 
 ```javascript
-//在项目入口文件
+//In the project entry file
 import Vue from 'vue'
 import CircleMenu from 'vue-circle-menu'
 Vue.component('CircleMenu', CircleMenu)
 ```
 
-- 若作为局部组件
+- If as a local component
 
 ```javascript
-//在某个组件中
+//In a component
 import CircleMenu from 'vue-circle-menu'
 export default {
   components: {
@@ -160,9 +172,9 @@ export default {
   }
 }
 ```
-# bug和建议
+# Bug and suggestions
 
-如果在使用中遇到问题或者建议，欢迎提`issues`
+If you encounter problems or suggestions in the use, welcome to `issues`
 
 # LICENSE
 

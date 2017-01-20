@@ -1,8 +1,8 @@
 <template>
   <div id='CircleMenu'>
     <div :class="type" :animate='animate'>
-      <div class="oy-mask-black" v-show="MaskToggle" v-if="mask==='black'"></div>
-      <div class="oy-mask-white" v-show="MaskToggle" v-if="mask==='white'"></div>
+      <div class="oy-mask-black" v-show="MaskToggle" v-if="mask==='black'" @click="toggle"></div>
+      <div class="oy-mask-white" v-show="MaskToggle" v-if="mask==='white'" @click="toggle"></div>
       <div class="oy-menu-group" :class="{'open':open}">
         <button class="oy-menu-btn btn-toggle pink"  :class="{'oy-menu-btn-Circle':circle}" :style='{background:BtnColor}' @click="toggle">
           <i class="icon-bars" v-if="btn"></i>
@@ -28,20 +28,19 @@
 </template>
 
 <script>
+import { isColors } from '../utils/colorRE.js';
 export default {
   name: 'CirleMenu',
   props: {
-    animate: String,
-    mask: String,
-    circle: Boolean,
-    btn: Boolean,
     type: {
       type: String,
       required: true
     },
-    colors: {
-      type: Array
-    }
+    animate: String,
+    mask: String,
+    circle: Boolean,
+    btn: Boolean,
+    colors: Array
   },
   data () {
     return {
@@ -69,12 +68,16 @@ export default {
   },
   mounted () {
     if (this.colors) {
-      for (let i = 0; i < this.colors.length; i++) {
-        this.BtnColor = this.colors[0]
-        this.Item1Color = this.colors[1]
-        this.Item2Color = this.colors[2]
-        this.Item3Color = this.colors[3]
-        this.Item4Color = this.colors[4]
+      if (this.colors.every(isColors) && this.colors.length === 5) {
+        for (let i = 0; i < this.colors.length; i++) {
+          this.BtnColor = this.colors[0]
+          this.Item1Color = this.colors[1]
+          this.Item2Color = this.colors[2]
+          this.Item3Color = this.colors[3]
+          this.Item4Color = this.colors[4]
+        }
+      } else {
+        console.error('this Array of colors must be hexcolor or rgbcolor and Array length must be 5 ---VueCircleMenu');
       }
     } else {
       return

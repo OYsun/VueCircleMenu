@@ -43,12 +43,12 @@
     "less-loader": "^2.2.3",
     "file-loader": "^0.8.5",
     "style-loader": "^0.13.0",
-    "vue": "2.1.8",
+    "vue": "^2.1.0",
     "vue-hot-reload-api": "^1.2.2",
     "vue-html-loader": "^1.0.0",
-    "vue-loader": "10.0.2",
-    "vue-template-compiler": "^2.1.8",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "vue-loader": "^10.0.0",
+    "vue-template-compiler": "^2.1.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.8.3"
   }
 }

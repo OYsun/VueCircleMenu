@@ -78,7 +78,7 @@ If you want to configure the color, `colors ` into an array，<b>In addition, it
 
 ```html
 
-  <circle-menu type="bottom" colors="[ '#563761', '#A7425C', '#FFE26F', '#F3825F', '#F19584', ]">
+  <circle-menu type="bottom" colors="[ '#563761', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584', ]">
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
     <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>

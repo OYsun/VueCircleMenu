@@ -19,6 +19,7 @@
 | Option    | type    | Description   |
 | ------------- |-------------| -----|
 | type | String |Necessary,Specifies the type of menu,There are six types of：top,bottom,left,right,middle,middle-around |
+| number(v1.1.0) | Number |Necessary,This is the v1.1.0 version of the api, specify the number of menus, the value should be greater than 2 less than 5, is only 2,3,4 of these three case |
 | circle | boolean | Whether the menu button for rounded corners, the default for the square button |
 | mask | String | There are two kinds of mask layer："white" and "black" |
 | animate | String | Sub menu animation,You can import an external css animation library, such as "animate.css"|
@@ -49,6 +50,14 @@ The `type` parameter is required, indicating the type of the menu, a total of ab
 <img src="./src/images/middle.gif" width="250">
 <img src="./src/images/middle-around.gif" width="250">
 
+
+### number
+The `number` parameter is required,This is the v1.1.0 version of the api, specify the number of menus, the value should be greater than 2 less than 5, is only 2,3,4 of these three case
+Note:
+-  when the number value of 3, `type` type for middle or middle-around is invalid
+- The number parameter fills the number, but in the vue propes,If we want to pass down an actual JavaScript number, we need to use v-bind so that its value is evaluated as a JavaScript expression.For more information click [here](https://vuejs.org/v2/guide/components.html#Literal-vs-Dynamic)
+
+
 ## circle
 Fill in `circle` to make the menu button rounded, the default is the square button：
 
@@ -78,7 +87,7 @@ If you want to configure the color, `colors ` into an array，<b>In addition, it
 
 ```html
 
-  <circle-menu type="bottom" colors="[ '#563761', '#A7425C', '#FFE26F', '#F3825F', '#F19584', ]">
+  <circle-menu type="bottom" :number="4" colors="[ '#563761', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584' ]">
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
     <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
@@ -103,7 +112,7 @@ According to these five `slot`,Actually means that the component is actually a p
 
 - Through `slot`, you can fill in any content, and custom style
 ```html
-  <circle-menu type="top">
+  <circle-menu type="top" :number="4">
     <button type="button" slot="item_btn"></button>
     <router-link :to="..." slot="item_1">
     <span slot="item_2"></a>
@@ -114,7 +123,7 @@ According to these five `slot`,Actually means that the component is actually a p
 - Through ` slot `, to bind any event for menu
 
 ```html
-  <circle-menu type="middle-around">
+  <circle-menu type="middle-around" :number="4">
     <button type="button" slot="item_btn" @click="dosomething" ></button>
     <a slot="item_1" herf="#" @click=""></a>
     <v-touch tag="a" v-on:tap="onTap" slot="item_2"></v-touch>
@@ -126,8 +135,8 @@ According to these five `slot`,Actually means that the component is actually a p
 
 ## Simple example
 ```html
-<!--"Middle" type, animation introduced animate.css library, white mask, round custom switch button, default menu color configuration-->
-  <circle-menu type="middle" animate="animated jello" mask='white' circle>
+<!--"Middle" type, four sub menu, animation introduced animate.css library, white mask, round custom switch button, default menu color configuration-->
+  <circle-menu type="middle" :number="4" animate="animated jello" mask='white' circle>
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
@@ -137,8 +146,8 @@ According to these five `slot`,Actually means that the component is actually a p
 ```
 
 ```html
-<!--"Top" type, the default animation, gray mask, square the default button, the custom color configuration menu-->
-  <circle-menu type="top" mask='black' btn colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
+<!--"Top" type, three sub menuthe, default animation, gray mask, square the default button, the custom color configuration menu-->
+  <circle-menu type="top" :number="3" mask='black' btn colors="[ 'rgb(255, 255, 102)', '#A7425C', '#FFE26F', 'F3825F', '#F19584' ]">
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
     <a slot="item_3" class="fa fa-weibo fa-lg"></a>

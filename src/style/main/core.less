@@ -123,19 +123,19 @@
 .middle(4);
 .middle .oy-menu-group.open .btn-list{
   & .oy-menu-item.oy-menu-item_1{
-    left: -55px;
+    left: @MenuPrepSpace;
     transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_2{
-    left: 55px;
+    left: @MenuSpace;
     transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_3{
-    left: -110px;
+    left: 2*@MenuPrepSpace;
     transition: 0.2s 0.2s;
   }
   & .oy-menu-item.oy-menu-item_4{
-    left: 110px;
+    left: 2*@MenuSpace;
     transition: 0.2s 0.2s;
   }
 }
@@ -151,23 +151,23 @@
 .middle-around(4);
 .middle-around .oy-menu-group.open .btn-list{
   & .oy-menu-item.oy-menu-item_1{
-    left: -75px;
+    left: (@MenuPrepSpace)-20px;
     top: 0px;
     transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_2{
-    left: 75px;
+    left: @MenuSpace+20px;
     top: 0px;
     transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_3{
-    left: 40px;
-    top: -65px;
+    left: (@MenuSpace)-15px;
+    top: (@MenuPrepSpace)-10px;
     transition: 0.2s 0.2s;
   }
   & .oy-menu-item.oy-menu-item_4{
-    left: -40px;
-    top: -65px;
+    left: @MenuPrepSpace+15px;
+    top: (@MenuPrepSpace)-10px;
     transition: 0.2s 0.2s;
   }
 }

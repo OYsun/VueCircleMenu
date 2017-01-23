@@ -14,6 +14,7 @@
 | 参数    | 类型    | 说明   |
 | ------------- |-------------| -----|
 | type | String |必填项,指明菜单的类型,有6种：top,bottom,left,right,middle,middle-around |
+| number(v1.1.0) | Number |必填项，v1.1.0版本新增的api。指定子菜单的个数,数值要大于2小于5，其实就只有2，3，4这三种情况 |
 | circle | boolean | 菜单按钮是否为圆角，默认为方形按钮 |
 | mask | String | 遮罩层，有两种："white"和"black" |
 | animate | String | 子菜单动画,可以引入外部css动画库，比如Animate.css |
@@ -44,6 +45,11 @@
 <img src="./src/images/middle.gif" width="250">
 <img src="./src/images/middle-around.gif" width="250">
 
+### number
+`number`是v1.1.0版本的api之前版本没有此项参数，固定四个子菜单。注意：
+- 当`number`的数值为3，既有3个子菜单的时候，`type`为`middle`和`middle-around`类型无效
+- `number` 参数填入的是数值，但是在vue属性中，填写"4"数值其实以字符串的形式，所以如果想传递一个实际的 JavaScript 数字，需要使用 v-bind ，从而让它的值被当作 JavaScript 表达式计算。详情看[vue文档](http://cn.vuejs.org/v2/guide/components.html#字面量语法-vs-动态语法)
+
 ## circle
 `circle`是让菜单按钮为圆角，默认是方形按钮：
 
@@ -73,7 +79,7 @@
 
 ```html
 
-  <circle-menu type="bottom" colors="[ '#563761', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584', ]">
+  <circle-menu type='bottom' :number='4' colors="[ '#563761', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584']">
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
     <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
@@ -107,7 +113,7 @@
 - 通过`slot`,给菜单绑定事件
 
 ```html
-  <circle-menu type="middle-around">
+  <circle-menu type="middle-around" :number='4'>
     <button type="button" slot="item_btn" @click="dosomething" ></button>
     <a slot="item_1" herf="#" @click=""></a>
     <v-touch tag="a" v-on:tap="onTap" slot="item_2"></v-touch>
@@ -119,8 +125,8 @@
 
 ## 简单的例子
 ```html
-<!--"middle"类型, 动画引入animate.css库，白色遮罩，圆形自定义开关按钮，默认菜单颜色配置-->
-  <circle-menu type="middle" animate="animated jello" mask='white' circle>
+<!--"middle"类型, 四个子菜单，动画引入animate.css库，白色遮罩，圆形自定义开关按钮，默认菜单颜色配置-->
+  <circle-menu type="middle" :number='4' animate="animated jello" mask='white' circle>
     <button type="button" slot="item_btn"></button>
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
@@ -130,8 +136,8 @@
 ```
 
 ```html
-<!--"top"类型,默认动画,灰色遮罩，方形默认开关按钮，自定义菜单颜色配置-->
-  <circle-menu type="top" mask='black' btn colors="[ '#563761', '#A7425C', '#FFE26F', 'F3825F', '#F19584', ]">
+<!--"top"类型,三个子菜单，默认动画,灰色遮罩，方形默认开关按钮，自定义菜单颜色配置-->
+  <circle-menu type="top" :number='3' mask='black' btn colors="[ 'rgb(255, 255, 102)', '#A7425C', '#FFE26F', 'F3825F', '#F19584']">
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
     <a slot="item_3" class="fa fa-weibo fa-lg"></a>

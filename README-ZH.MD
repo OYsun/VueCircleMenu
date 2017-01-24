@@ -141,7 +141,6 @@
     <a slot="item_1" class="fa fa-twitter fa-lg"></a>
     <a slot="item_2" class="fa fa-weixin fa-lg"></a>
     <a slot="item_3" class="fa fa-weibo fa-lg"></a>
-    <a slot="item_4" class="fa fa-github fa-lg"></a>
   </circle-menu>
 ```
 

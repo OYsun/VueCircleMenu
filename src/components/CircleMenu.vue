@@ -89,7 +89,7 @@ export default {
   mounted () {
     if (this.colors) {
       if (this.colors.every(isColors) && this.colors.length === 5) {
-        for (let i = 0; i < this.colors.length; i++) {
+        for (let i = 0, length = this.colors.length; i < length; i++) {
           this.BtnColor = this.colors[0]
           this.Item1Color = this.colors[1]
           this.Item2Color = this.colors[2]

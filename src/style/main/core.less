@@ -66,7 +66,6 @@
 .bottom-open(@n, @i: 1) when (@i =< @n) {
   .bottom .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
     top: (@i * @MenuSpace);
-    transition: 0.2s 0.1s;
   }
   .bottom-open(@n, (@i + 1));
 }
@@ -83,7 +82,6 @@
 .left-open(@n, @i: 1) when (@i =< @n) {
   .left .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
     left: (@i * @MenuSpace);
-    transition: 0.2s 0.1s;
   }
   .left-open(@n, (@i + 1));
 }
@@ -100,7 +98,6 @@
 .right-open(@n, @i: 1) when (@i =< @n) {
   .right .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_@{i} {
     left: (@i * @MenuPrepSpace);
-    transition: 0.2s 0.1s;
   }
   .right-open(@n, (@i + 1));
 }
@@ -124,19 +121,15 @@
 .middle .oy-menu-group.open .btn-list{
   & .oy-menu-item.oy-menu-item_1{
     left: @MenuPrepSpace;
-    transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_2{
     left: @MenuSpace;
-    transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_3{
     left: 2*@MenuPrepSpace;
-    transition: 0.2s 0.2s;
   }
   & .oy-menu-item.oy-menu-item_4{
     left: 2*@MenuSpace;
-    transition: 0.2s 0.2s;
   }
 }
 
@@ -153,21 +146,17 @@
   & .oy-menu-item.oy-menu-item_1{
     left: (@MenuPrepSpace)-20px;
     top: 0px;
-    transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_2{
     left: @MenuSpace+20px;
     top: 0px;
-    transition: 0.2s 0.1s;
   }
   & .oy-menu-item.oy-menu-item_3{
     left: (@MenuSpace)-15px;
     top: (@MenuPrepSpace)-10px;
-    transition: 0.2s 0.2s;
   }
   & .oy-menu-item.oy-menu-item_4{
     left: @MenuPrepSpace+15px;
     top: (@MenuPrepSpace)-10px;
-    transition: 0.2s 0.2s;
   }
 }

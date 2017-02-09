@@ -3,7 +3,7 @@
 <img src="./src/images/index.gif">
 
 # demo
-为了更好的演示请使用手机扫描下面的二维码查看demo
+为了更好的演示请使用手机扫描下面的二维码查看demo,或点击这里：http://web-oysun.cn/VueCircleMenu/
 
 <img src="./src/images/demo.png">
 
